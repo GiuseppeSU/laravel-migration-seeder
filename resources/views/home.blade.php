@@ -6,7 +6,7 @@
     <div class="row">
         @foreach ($trains as $train)
             <div class="col">
-                <h1>{{ $train->Aziende }}</h1>
+                <h1>{{ $train->aziende }}</h1>
 
             </div>
         @endforeach
