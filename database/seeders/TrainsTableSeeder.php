@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Functions\Helpers;
 use App\Models\Train;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,7 +17,7 @@ class TrainsTableSeeder extends Seeder
      */
     public function run()
     {
-        $csvContent = self::getCsvContent(__DIR__ . '/trains.csv');
+        $csvContent = Helpers::getCsvContent(__DIR__ . '/trains.csv');
         foreach ($csvContent as $index => $row) {
             if ($index > 0) {
                 $newTrain = new Train();
@@ -35,20 +36,4 @@ class TrainsTableSeeder extends Seeder
         }
     }
 
-    public static function getCsvContent(string $path)
-    {
-        $data = [];
-        $file = fopen($path, 'r');
-        if ($file === false) {
-            exit('file non valido');
-
-        }
-
-        while (($row = fgetcsv($file)) !== FALSE) {
-            $data[] = $row;
-
-        }
-        return $data;
-
-    }
 }

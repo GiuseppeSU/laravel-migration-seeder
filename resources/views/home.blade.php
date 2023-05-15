@@ -16,16 +16,18 @@
                                 <th scope="col">arrivo</th>
                                 <th scope="col"> Partenza</th>
                                 <th scope="col"> Arrivo</th>
+                                <th scope="col"> Codice Treno</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <tr>
-                                <th>{{ $train->aziende }}</th>
-                                <td>{{ $train->stazione_di_partenza }}</td>
-                                <td class="w-25">{{ $train->stazione_di_arrivo }}</td>
-                                <td>{{ $train->partenza }}</td>
-                                <td>{{ $train->arrivo }}</td>
+                                <th>{{ $train->company }}</th>
+                                <td>{{ $train->departure_station }}</td>
+                                <td class="w-25">{{ $train->arrival_station }}</td>
+                                <td>{{ $train->departure_time }}</td>
+                                <td>{{ $train->arrival_time }}</td>
+                                <td>{{ $train->train_code }}</td>
                             </tr>
                         </tbody>
                     </table>
